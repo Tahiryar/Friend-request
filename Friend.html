@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Firend.css"> <!-- Corrected CSS file name -->
+</head>
+<body>
+    <div id="card">
+        <img src="https://static.vecteezy.com/system/resources/previews/026/829/465/non_2x/beautiful-girl-with-autumn-leaves-photo.jpg" alt="Profile Picture">
+        <h1>Angel</h1>
+        <h5 class="status">Stranger</h5> <!-- Added class for better CSS targeting -->
+        <button id="add">Add Friend</button>
+    </div>
+
+    <script>
+        let isFriend = false; // Changed variable name for clarity
+        const statusElement = document.querySelector('.status'); // Changed selector to class
+        const addButton = document.querySelector('#add');
+
+        addButton.addEventListener("click", () => {
+            if (!isFriend) {
+                statusElement.innerHTML = "Friends";
+                statusElement.style.color = "green";
+                addButton.innerHTML = "Remove Friend";
+                isFriend = true;
+            } else {
+                statusElement.innerHTML = "Stranger";
+                statusElement.style.color = "red";
+                addButton.innerHTML = "Add Friend";
+                isFriend = false;
+            }
+        });
+    </script>
+</body>
+</html>
